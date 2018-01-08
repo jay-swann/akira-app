@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './akira-logo.jpg';
 import './App.css';
+import Clock from './Clock.jsx';
 var moment = require('moment');
 
 class App extends Component {
@@ -43,10 +44,11 @@ class App extends Component {
         	<div>
         		{this.state.data.map(function(item) {
         			return (
-        				<div>
-        				   <p>Current system time: {moment(item.system_time).format("dddd MMMM D h:mm:ssA")}</p>
+        				<div className="App-info">
+        				  <Clock />
         					<p>We are {(item.online) ? 'open!' : 'closed.'}</p>
-        					<p>Hours of operation: {moment(item.open_hours_today.open_at).format("h:mmA")} to {moment(item.open_hours_today.close_at).format("h:mmA")}</p>
+        					<p>Hours of operation: {moment(item.open_hours_today.open_at).format("h:mmA")} to&nbsp;
+                  {moment(item.open_hours_today.close_at).format("h:mmA")}</p>
         				</div>
         			)
         		})}
