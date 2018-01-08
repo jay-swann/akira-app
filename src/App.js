@@ -47,7 +47,8 @@ class App extends Component {
         				<div className="App-info">
         				  <Clock />
         					<p>We are {(item.online) ? 'open!' : 'closed.'}</p>
-        					<p>Hours of operation: {moment(item.open_hours_today.open_at).format("h:mmA")} to&nbsp;
+        					<p>Hours of operation:&nbsp;
+                  {moment(item.open_hours_today.open_at).format("h:mmA")} to&nbsp;
                   {moment(item.open_hours_today.close_at).format("h:mmA")}</p>
         				</div>
         			)

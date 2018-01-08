@@ -16,10 +16,6 @@ class Clock extends Component {
 		);
 	}
 
-	componentWillUnmount() {
-		clearInterval(this.timerID)
-	}
-
 	tick() {
 		this.setState({
 			system_time: new Date()
@@ -28,7 +24,8 @@ class Clock extends Component {
 
 	render() {
 		return (
-			<p>Current system time: {moment(this.state.system_time).format("dddd MMMM D h:mm:ssA")}</p>
+			<p>Current system time:&nbsp; 
+			{moment(this.state.system_time).format("dddd MMMM D, h:mm:ssA")}</p>
 		);
 	}
 }
